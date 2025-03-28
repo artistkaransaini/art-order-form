@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Art Creation | Custom Paintings Made Easy</title>
+	<link rel="stylesheet" href="style.css" />
+	  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+		integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOM8d7xj1z5l5e5e5e5e5e5e5e5e5e5e5e5e5"
+		crossorigin="anonymous" />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" />
+	<link rel="icon" type="image/png" href="favicon.png" sizes="16x16" />
+</head>
+
+<body>
+	<section class="hero">
+		<div class="hero-background"></div>
+		<div class="container hero-content">
+			<h1>Turn Your Memories into Art</h1>
+			<p>
+				Create a unique painting that tells your story. Simple,
+				personal, and beautiful.
+			</p>
+		</div>
+	</section>
+
+	<div class="container">
+		<form id="paintingOrderForm" action="#" method="POST" enctype="multipart/form-data">
+			<h2>Order Your Custom Painting</h2>
+			<p>
+				Fill in your details and let's create something special
+				together.
+			</p>
+
+			<div class="form-group">
+				<label>Your Full Name</label>
+				<input type="text" name="name" required placeholder="Enter your full name" />
+			</div>
+
+			<div class="form-group">
+				<label>Contact Email</label>
+				<input type="email" name="email" required placeholder="Your email address" />
+			</div>
+
+			<div class="form-group">
+				<label>Phone Number</label>
+				<input type="tel" name="phone" required placeholder="Your contact number" />
+			</div>
+
+			<div class="form-group">
+				<label>Shipping Address</label>
+				<div class="address-grid">
+					<input type="text" name="apartment" placeholder="Apartment/Flat Number" />
+					<input type="text" name="landmark" placeholder="Nearby Landmark" />
+					<input type="text" name="street" placeholder="Street Address" />
+					<select title="state" name="state" required>
+                        <option value="">Select Your State</option>
+                        <option value="AN">Andaman and Nicobar Islands</option>
+                        <option value="AP">Andhra Pradesh</option>
+                        <option value="AR">Arunachal Pradesh</option>
+                        <option value="AS">Assam</option>
+                        <option value="BR">Bihar</option>
+                        <option value="CH">Chandigarh</option>
+                        <option value="CT">Chhattisgarh</option>
+                        <option value="DN">Dadra and Nagar Haveli</option>
+                        <option value="DD">Daman and Diu</option>
+                        <option value="DL">Delhi</option>
+                        <option value="GA">Goa</option>
+                        <option value="GJ">Gujarat</option>
+                        <option value="HR">Haryana</option>
+                        <option value="HP">Himachal Pradesh</option>
+                        <option value="JK">Jammu and Kashmir</option>
+                        <option value="JH">Jharkhand</option>
+                        <option value="KA">Karnataka</option>
+                        <option value="KL">Kerala</option>
+                        <option value="MP">Madhya Pradesh</option>
+                        <option value="MH">Maharashtra</option>
+                        <option value="MN">Manipur</option>
+                        <option value="ML">Meghalaya</option>
+                        <option value="MZ">Mizoram</option>
+                        <option value="NL">Nagaland</option>
+                        <option value="OR">Odisha</option>
+                        <option value="PY">Puducherry</option>
+                        <option value="PB">Punjab</option>
+                        <option value="RJ">Rajasthan</option>
+                        <option value="SK">Sikkim</option>
+                        <option value="TN">Tamil Nadu</option>
+                        <option value="TG">Telangana</option>
+                        <option value="TR">Tripura</option>
+                        <option value="UP">Uttar Pradesh</option>
+                        <option value="UT">Uttarakhand</option>
+                        <option value="WB">West Bengal</option>
+                    </select>
+					<input type="text" name="pincode" placeholder="PIN Code" required />
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label>Painting Type</label>
+				<select title="paintingtype" name="paintingType" required>
+					<option value="">Choose Painting Style</option>
+					<option value="portrait">Portrait</option>
+					<option value="landscape">Landscape</option>
+					<option value="abstract">Abstract</option>
+					<option value="custom">Custom Design</option>
+				</select>
+			</div>
+
+			<div class="form-group">
+				<label>Canvas Size</label>
+				<div class="canvas-size-options">
+					<div class="canvas-size-option" data-size="A4">
+						A4 (210 × 297 mm)
+					</div>
+					<div class="canvas-size-option" data-size="A3">
+						A3 (297 × 420 mm)
+					</div>
+					<div class="canvas-size-option" data-size="A2">
+						A2 (420 × 594 mm)
+					</div>
+					<div class="canvas-size-option" data-size="A5">
+						A5 (148 × 210 mm)
+					</div>
+					<div class="canvas-size-option" data-size="custom">
+						Custom Size
+					</div>
+				</div>
+				<div id="customSizeInputs" style="display: none; margin-top: 1rem">
+					<div class="address-grid">
+						<input type="number" name="customWidth" placeholder="Width (mm)" />
+						<input type="number" name="customHeight" placeholder="Height (mm)" />
+					</div>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label>Painting Description</label>
+				<textarea name="description" rows="4"
+					placeholder="Describe your painting idea"></textarea>
+			</div>
+
+			<div class="form-group">
+				<label for="referenceImage">Reference Image (Optional)</label>
+				<div class="file-upload" id="file-upload-container">
+					<input type="file" id="file-input" name="referenceImage" accept="image/*"
+						multiple />
+					<p id="upload-text">
+						Drag and drop or click to upload reference image
+					</p>
+					<div id="preview-container"></div>
+				</div>
+			</div>
+
+			<button type="submit" class="submit-btn">
+				Create My Painting
+			</button>
+		</form>
+	</div>
+	<div class="popup-overlay" id="popupOverlay">
+        <div class="popup-content" id="popupContent">
+            <button class="popup-close" id="popupClose">✕</button>
+            <div class="popup-icon"></div>
+            <h2 class="popup-title">Artwork Booking Confirmed!</h2>
+            <p class="popup-message">Your unique artwork is being crafted. We'll reach out soon to discuss the details of bringing your memories to life.</p>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+	<script src="script.js"></script>
+</body>
+
+</html>
