@@ -148,7 +148,7 @@ async function uploadToImgBB(file) {
 
     try {
         const response = await fetch(
-            "https://api.imgbb.com/1/upload?key=2d5af1a1bdf394a5d634237a6c5e3a7c",
+            "https://api.imgbb.com/1/upload?key=2462e15221403c0a1b6b98c466bbf01b",
             {
                 method: "POST",
                 body: formData,
@@ -174,9 +174,9 @@ uploadText.style.display = previewContainer.children.length ? "none" : "block"
 
 // Form submission
 
-const SERVICE_ID = "service_4tx9kh4"
-const TEMPLATE_ID = "template_5hc3dof"
-const PUBLIC_KEY = "5UTUPoVCQuZB_L7tk"
+const SERVICE_ID = "service_zsj2g6t"
+const TEMPLATE_ID = "template_rhdxebb"
+const PUBLIC_KEY = "H_eDZ6YKFd_lYSPkf"
 
 // Initialize EmailJS
 ;(function () {
