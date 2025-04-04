@@ -216,6 +216,7 @@ document
 
         try {
             await emailjs.send(SERVICE_ID, TEMPLATE_ID, {
+		title: data.name,
                 from_name: data.name,
                 from_email: data.email,
                 message: message,
