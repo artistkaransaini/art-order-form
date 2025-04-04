@@ -176,7 +176,7 @@ uploadText.style.display = previewContainer.children.length ? "none" : "block"
 
 const SERVICE_ID = "service_zsj2g6t"
 const TEMPLATE_ID = "template_rhdxebb"
-const PUBLIC_KEY = "H_eDZ6YKFd_lYSPkf"
+const PUBLIC_KEY = "Vmwm_j4K_JIZgoKom"
 
 // Initialize EmailJS
 ;(function () {
