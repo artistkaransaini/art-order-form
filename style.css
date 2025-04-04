@@ -262,7 +262,7 @@ select:focus {
     cursor: pointer;
 }
 #upload-text {
-    font-size: 0.3rem;
+    font-size: 1rem;
     color: var(--text-color);
     margin-top: 1rem;
 }
