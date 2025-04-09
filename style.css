@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap");
+    @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap");
 
 :root {
     --primary-color: #4a69bd;
@@ -188,7 +188,7 @@ form {
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
     padding: 3rem;
     max-width: 800px;
-    margin: 2rem auto;
+    margin: 2rem auto 0;
 }
 
 .form-group {
@@ -327,3 +327,10 @@ select:focus {
     border-color: var(--primary-color);
     background-color: rgba(74, 105, 189, 0.05);
 }
+#foot{
+    display:block;
+    margin:20px;
+    text-align:center;
+    color: var(--primary-color);
+}
+
