@@ -333,4 +333,15 @@ select:focus {
     text-align:center;
     color: var(--primary-color);
 }
-
+#addShippingLater{
+    display: inline !important;
+    margin-bottom: 1rem;
+    margin-right: 0.7rem;
+}
+input[type="checkbox"] {
+    display: inline;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    accent-color: var(--primary-color);
+}
