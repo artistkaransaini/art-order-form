@@ -210,7 +210,7 @@ document
     const message = `
                 Name: ${data.name}
                 Email: ${data.email}
-                Phone: ${data.phogfne}
+                Phone: ${data.phone}
                 Address: ${data.apartment || ""}, ${data.landmark || ""}, ${data.street || ""}, ${data.state || ""}, ${data.pincode || "N/A"}
                 Will disclose address later: ${addressLater}
                 Painting Type: ${data.paintingType}
