@@ -1,3 +1,110 @@
+/* Section header for Gallery and Order */
+.section-header {
+    text-align: center;
+    margin: 2.5rem 0 2rem 0;
+}
+.section-header h2 {
+    color: var(--primary-color);
+    font-weight: 700;
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.01em;
+}
+.section-header p {
+    color: #555;
+    max-width: 600px;
+    margin: 0 auto 0.5rem auto;
+    font-size: 1.1rem;
+}
+/* Art Carousel Styles */
+/* Art Carousel Collage Styles */
+.art-carousel.collage-carousel {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto 3.5rem auto;
+    border-radius: 24px;
+    box-shadow: 0 12px 40px rgba(74,105,189,0.10);
+    background: #fff;
+    padding: 2.5rem 1.5rem 2.5rem 1.5rem;
+    position: relative;
+    min-height: 520px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+.collage-carousel .swiper-wrapper {
+    margin-bottom: 0.5rem;
+    justify-content: center;
+    display: flex;
+    gap: 0;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+.collage-carousel .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    height: 220px !important;
+    width: 220px !important;
+    margin: 0 8px 24px 8px;
+    box-sizing: border-box;
+}
+.carousel-art-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(74,105,189,0.10);
+    object-fit: cover;
+    background: #f5f6fa;
+    transition: transform 0.3s, box-shadow 0.3s;
+    margin: 0;
+}
+.carousel-art-image:hover {
+    transform: scale(1.06);
+    box-shadow: 0 12px 32px rgba(74,105,189,0.18);
+}
+.collage-carousel .swiper-pagination {
+    bottom: 0;
+}
+.swiper-pagination-bullet {
+    background: var(--primary-color);
+    opacity: 0.5;
+}
+.swiper-pagination-bullet-active {
+    opacity: 1;
+}
+@media (max-width: 900px) {
+    .carousel-art-image {
+        width: 140px;
+        height: 140px;
+    }
+    .collage-carousel .swiper-slide {
+        width: 150px !important;
+        height: 150px !important;
+    }
+    .art-carousel.collage-carousel {
+        padding: 2rem 0.5rem 2rem 0.5rem;
+    }
+}
+@media (max-width: 600px) {
+    .carousel-art-image {
+        width: 90px;
+        height: 90px;
+    }
+    .collage-carousel .swiper-slide {
+        width: 100px !important;
+        height: 100px !important;
+        margin: 0 4px 10px 4px;
+    }
+    .art-carousel.collage-carousel {
+        padding: 1rem 0.2rem 1rem 0.2rem;
+        min-height: 220px;
+    }
+}
     @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap");
 
 :root {
@@ -19,6 +126,23 @@ body {
     line-height: 1.6;
     color: var(--text-color);
     background-color: var(--background-light);
+    overflow-x: hidden;
+    overflow-y: auto;
+    width: 100vw;
+    max-width: none;
+    min-height: 100vh;
+    margin: 0;
+}
+
+/* Match order form box padding to carousel */
+#paintingOrderForm {
+    width: 100%;
+    max-width: 1200px;
+    background: #fff;
+    border-radius: 24px;
+    box-shadow: 0 12px 40px rgba(74,105,189,0.10);
+    padding: 2.5rem 1.5rem 2.5rem 1.5rem;
+    margin-top: 2.5rem;
 }
 .popup-overlay {
     position: fixed;
@@ -125,7 +249,7 @@ body {
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 2rem 0;
+    padding: 1.5rem 0;
 }
 
 .hero {
@@ -344,4 +468,58 @@ input[type="checkbox"] {
     height: 20px;
     cursor: pointer;
     accent-color: var(--primary-color);
+}
+
+/* Popup card for artwork */
+.artwork-popup-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.45);
+    backdrop-filter: blur(5px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.2s;
+}
+.artwork-popup-card {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 8px 32px rgba(74,105,189,0.18);
+    padding: 3.5rem 3.5rem 2.5rem 3.5rem;
+    max-width: 98vw;
+    max-height: 98vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  animation: popIn 0.2s;
+}
+.artwork-popup-card img {
+    max-width: 600px;
+    max-height: 80vh;
+  border-radius: 12px;
+  margin-bottom: 1.2rem;
+  box-shadow: 0 4px 16px rgba(74,105,189,0.10);
+}
+.artwork-popup-close {
+  position: absolute;
+  top: 0.7rem;
+  right: 1.2rem;
+  font-size: 1.7rem;
+  color: #888;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1;
+  transition: color 0.2s;
+}
+.artwork-popup-close:hover {
+  color: var(--primary-color, #4a69bd);
+}
+@keyframes fadeIn {
+  from { opacity: 0; } to { opacity: 1; }
+}
+@keyframes popIn {
+  from { transform: scale(0.92); opacity: 0.7; } to { transform: scale(1); opacity: 1; }
 }

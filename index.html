@@ -13,24 +13,41 @@
 </head>
 
 <body>
-	<section class="hero">
+	 <!-- Art Carousel Section -->
+	
+	 <section class="hero">
 		<div class="hero-background"></div>
 		<div class="container hero-content">
 			<h1>Turn Your Memories into Art</h1>
 			<p>
-				Create a unique painting that tells your story. Simple,
+				Own a unique painting that tells your story. Simple,
 				personal, and beautiful.
 			</p>
 		</div>
 	</section>
-
+	 <div class="section-header">
+		 <h2>Gallery</h2>
+		 <p>Browse through my artworks below. Scroll down to order your favorite or request a custom piece!</p>
+	 </div>
+ <div class="container" style="margin-top:2.5rem;">
+  <div class="art-carousel collage-carousel">
+		 <div class="swiper-wrapper">
+			 <!-- Slides will be injected by JS -->
+		 </div>
+		 <div class="swiper-pagination"></div>
+		 <!-- Swiper navigation buttons for manual scroll -->
+		 <div class="swiper-button-prev"></div>
+		 <div class="swiper-button-next"></div>
+	 </div>
+			<div class="section-header">
+				<h2>Order Your Custom Painting</h2>
+				<p>Fill in your details and let's create something special together.</p>
+			</div>
+ </div>
+ </div>
 	<div class="container">
 		<form id="paintingOrderForm" action="#" method="POST" enctype="multipart/form-data">
-			<h2>Order Your Custom Painting</h2>
-			<p>
-				Fill in your details and let's create something special
-				together.
-			</p>
+
 
 			<div class="form-group">
 				<label>Your Full Name</label>
@@ -165,7 +182,7 @@
 	</div>
 	  <div id="foot"><span> Made with <svg viewBox="0 0 1792 1792" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" style="height: 0.8rem;">
         <path d="M896 1664q-26 0-44-18l-624-602q-10-8-27.5-26T145 952.5 77 855 23.5 734 0 596q0-220 127-344t351-124q62 0 126.5 21.5t120 58T820 276t76 68q36-36 76-68t95.5-68.5 120-58T1314 128q224 0 351 124t127 344q0 221-229 450l-623 600q-18 18-44 18z" fill="#4a69bd      "></path>
-      </svg> by Saini Strokes<span></div>
+      </svg> by Saini Stroke<span></div>
 	<div class="popup-overlay" id="popupOverlay">
         <div class="popup-content" id="popupContent">
             <button class="popup-close" id="popupClose">✕</button>
@@ -176,6 +193,10 @@
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
 	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+	<!-- Swiper.js Carousel -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+	<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+	<script src="carousel-init.js"></script>
 	<script src="script.js"></script>
 </body>
 </html>
