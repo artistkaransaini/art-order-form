@@ -1,12 +1,12 @@
-// Swiper carousel initialization for artworks collage (3 rows, maintain aspect ratio)
 const githubUser = "artistkaransaini";
-const repo = "art-order-form"; // Change to your repository name
-const branch = "void"; // Change if your default branch is not main
+const repo = "art-order-form";
+const branch = "void";
+// Swiper carousel initialization for artworks collage (3 rows, maintain aspect ratio)
 const artCount = 17;
 const carouselWrapper = document.querySelector('.art-carousel .swiper-wrapper');
-// Only add images that exist (by checking if the image loads)
 let loadedCount = 0;
-for (let i = 1; i <= artCount; i++) {
+let slideCount = 0;
+ for (let i = 1; i <= artCount; i++) {
   const img = document.createElement('img');
   img.src = `https://raw.githubusercontent.com/${githubUser}/${repo}/${branch}/art/art${i}.jpg`;
   img.alt = `Artwork ${i}`;
@@ -17,16 +17,21 @@ for (let i = 1; i <= artCount; i++) {
     slide.className = 'swiper-slide';
     slide.appendChild(img);
     carouselWrapper.appendChild(slide);
-    loadedCount++;
-    if (loadedCount === 1) {
+    slideCount++;
+    if (slideCount === 1) {
       // Only initialize Swiper after at least one image is loaded
       initSwiper();
     }
+     // Attach click handler as soon as image is loaded and in DOM
+     img.style.cursor = 'pointer';
+     img.onclick = (e) => {
+       showArtworkPopup(img.src, img.alt);
+     };
   };
 }
 
 function initSwiper() {
-  const swiper = new Swiper('.art-carousel', {
+  window.swiper = new Swiper('.art-carousel', {
     slidesPerView: 7,
     slidesPerGroup: 3,
     spaceBetween: 0,
@@ -45,45 +50,8 @@ function initSwiper() {
       0: { slidesPerView: 1, grid: { rows: 1 } },
     },
   });
-  swiper.update();
+  window.swiper.update();
 }
-
-const swiper = new Swiper('.art-carousel', {
-  slidesPerView: 7,
-  slidesPerGroup: 3,
-  spaceBetween: 0,
-  loop: true,
-  speed: 2500,
-  autoplay: {
-    delay: 0,
-    disableOnInteraction: false,
-  },
-  freeMode: false, // Allow smooth autoplay, but not free drag
-  grid: {
-    rows: 3,
-    fill: 'row',
-  },
-  pagination: {
-    el: '.swiper-pagination',
-    clickable: true,
-  },
-  // Navigation removed for mobile-friendly auto-scroll
-  breakpoints: {
-    1400: { slidesPerView: 7 },
-    1100: { slidesPerView: 5 },
-    800: { slidesPerView: 4 },
-    500: { slidesPerView: 2 },
-    0: { slidesPerView: 1 },
-  },
-});
-
-// Ensure carousel images scroll infinitely in a loop
-swiper.params.loop = true;
-swiper.params.autoplay = {
-  delay: 0, // Continuous scrolling without delay
-  disableOnInteraction: false, // Keep autoplay active even after user interaction
-};
-swiper.update();
 
 // Popup logic for artwork images
 function showArtworkPopup(imgSrc, imgAlt) {
@@ -112,12 +80,3 @@ function showArtworkPopup(imgSrc, imgAlt) {
   overlay.appendChild(card);
   document.body.appendChild(overlay);
 }
-// Attach click event to all carousel images (after they are created)
-setTimeout(() => {
-  document.querySelectorAll('.carousel-art-image').forEach(img => {
-    img.style.cursor = 'pointer';
-    img.onclick = (e) => {
-      showArtworkPopup(img.src, img.alt);
-    };
-  });
-}, 500);

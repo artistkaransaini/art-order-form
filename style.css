@@ -590,12 +590,25 @@ input[type="checkbox"] {
   position: relative;
   animation: popIn 0.2s;
 }
+/* Responsive popup image size */
 .artwork-popup-card img {
-    max-width: 600px;
-    max-height: 80vh;
-  border-radius: 12px;
-  margin-bottom: 1.2rem;
-  box-shadow: 0 4px 16px rgba(74,105,189,0.10);
+    max-width: 90vw;
+    max-height: 70vh;
+    border-radius: 12px;
+    margin-bottom: 1.2rem;
+    box-shadow: 0 4px 16px rgba(74,105,189,0.10);
+}
+
+@media (max-width: 600px) {
+    .artwork-popup-card {
+        padding: 1.2rem 0.5rem 1.2rem 0.5rem;
+        max-width: 98vw;
+        max-height: 98vh;
+    }
+    .artwork-popup-card img {
+        max-width: 96vw;
+        max-height: 50vh;
+    }
 }
 .artwork-popup-close {
   position: absolute;
