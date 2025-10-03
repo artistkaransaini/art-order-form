@@ -47,7 +47,7 @@ function initSwiper() {
       1100: { slidesPerView: 5, grid: { rows: 3 } },
       800: { slidesPerView: 4, grid: { rows: 3 } },
       500: { slidesPerView: 2, grid: { rows: 3 } },
-      0: { slidesPerView: 1, grid: { rows: 3 } }, // Always 3 rows, even on phones
+      0: { slidesPerView: 1, grid: { rows: 1 } }, // On phones, single row
     },
   });
   window.swiper.update();
