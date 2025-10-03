@@ -2,8 +2,8 @@ const githubUser = "artistkaransaini";
 const repo = "art-order-form";
 const branch = "void";
 // Swiper carousel initialization for artworks collage (3 rows, maintain aspect ratio)
-const artCount = 17;
-const carouselWrapper = document.querySelector('.art-carousel .swiper-wrapper');
+const artCount = 16;
+const carouselWrapper = document.querySelector('.art-carousel');
 let loadedCount = 0;
 let slideCount = 0;
  for (let i = 1; i <= artCount; i++) {
@@ -18,11 +18,6 @@ let slideCount = 0;
     slide.appendChild(img);
     carouselWrapper.appendChild(slide);
     slideCount++;
-    if (slideCount === 1) {
-      // Only initialize Swiper after at least one image is loaded
-      initSwiper();
-    }
-     // Attach click handler as soon as image is loaded and in DOM
      img.style.cursor = 'pointer';
      img.onclick = (e) => {
        showArtworkPopup(img.src, img.alt);
@@ -31,26 +26,7 @@ let slideCount = 0;
 }
 
 function initSwiper() {
-  window.swiper = new Swiper('.art-carousel', {
-    slidesPerView: 7,
-    slidesPerGroup: 3,
-    spaceBetween: 0,
-    loop: true,
-    speed: 400,
-    freeMode: false,
-    grid: {
-      rows: 3,
-      fill: 'row',
-    },
-    breakpoints: {
-      1400: { slidesPerView: 7, grid: { rows: 3 } },
-      1100: { slidesPerView: 5, grid: { rows: 3 } },
-      800: { slidesPerView: 4, grid: { rows: 3 } },
-      500: { slidesPerView: 2, grid: { rows: 3 } },
-      0: { slidesPerView: 1, grid: { rows: 1 } }, // On phones, single row
-    },
-  });
-  window.swiper.update();
+  
 }
 
 // Popup logic for artwork images
