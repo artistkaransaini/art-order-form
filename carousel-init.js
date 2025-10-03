@@ -31,14 +31,7 @@ function initSwiper() {
     slidesPerGroup: 3,
     spaceBetween: 0,
     loop: true,
-    speed: 2500,
-    autoplay: {
-      delay: 0,
-      disableOnInteraction: false,
-      pauseOnMouseEnter: false,
-      stopOnLastSlide: false,
-      waitForTransition: false
-    },
+    speed: 400,
     freeMode: false,
     grid: {
       rows: 3,
@@ -49,22 +42,9 @@ function initSwiper() {
       1100: { slidesPerView: 5, grid: { rows: 3 } },
       800: { slidesPerView: 4, grid: { rows: 3 } },
       500: { slidesPerView: 2, grid: { rows: 3 } },
-      0: { slidesPerView: 1, grid: { rows: 1 } }, // On phones, single row
+      0: { slidesPerView: 1, grid: { rows: 1 } },
     },
-    on: {
-      reachEnd: function() {
-        this.slideToLoop(0, 0); // Instantly loop to first slide
-      }
-    }
   });
-  swiper.params.loop = true;
-  swiper.params.autoplay = {
-    delay: 0,
-    disableOnInteraction: false,
-    pauseOnMouseEnter: false,
-    stopOnLastSlide: false,
-    waitForTransition: false
-  };
   swiper.update();
 }
 
