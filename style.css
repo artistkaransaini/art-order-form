@@ -186,18 +186,9 @@ a.see-more-btn:hover {
     .art-carousel.collage-carousel {
         padding: 1rem 0.2rem 1rem 0.2rem;
         min-height: 120px;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        align-items: center;
-        justify-content: flex-start;
     }
     .collage-carousel .swiper-wrapper {
-        flex-direction: row !important;
-        display: flex;
-        flex-wrap: nowrap;
-        align-items: center;
-        justify-content: flex-start;
+        /* Use Swiper's default flex/grid for multi-row */
     }
 }
     @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap");
