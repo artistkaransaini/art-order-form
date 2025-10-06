@@ -744,10 +744,7 @@ input[type="checkbox"] {
         flex-direction: column;
         align-items: stretch;
         padding: 0.7rem 0.7rem 0 0.7rem;
-    }
-    .pfp-img {
-        width: 120px;
-        height: 120px;
+        gap: 0.2rem; /* reduce vertical gap between logo and pfp */
     }
     #logo {
         height: 90px;
@@ -755,16 +752,22 @@ input[type="checkbox"] {
         max-width: 90vw;
         aspect-ratio: 1/1.1;
         object-fit: contain;
-        margin: 0 auto 0.7rem auto;
+        margin: 0 auto 0.2rem auto; /* reduce bottom margin */
         display: block;
     }
     .pfp-inline-container {
-        margin-top: 1rem;
+        margin-top: 0.2rem; /* reduce top margin */
+    }
+    .pfp-img {
+        width: 120px;
+        height: 120px;
+        margin-bottom: 0.2rem; /* reduce bottom margin */
     }
     .reach-me-btn {
         font-size: 1rem;
         padding: 0.5em 1.2em;
         border-radius: 8px;
+        margin-top: 0.1rem; /* reduce top margin */
     }
 }
 
