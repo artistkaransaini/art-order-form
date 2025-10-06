@@ -9,14 +9,38 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
 		integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOM8d7xj1z5l5e5e5e5e5e5e5e5e5e5e5e5e5"/>
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" />
-	<link rel="icon" type="image/png" href="favicon.png"/>
+	<link rel="icon" type="image/png" href="favicon.jpeg"/>
 </head>
 
 <body>
 	 <!-- Art Carousel Section -->
 	<section class="mega">
-		<!-- <img src="logo.png" alt="Logo" class="logo"> -->
+		<img id="logo" src="logo.png" alt="Logo" class="logo">
+		<div class="pfp-inline-container">
+			<img src="pfp.jpeg" alt="Profile Picture" class="pfp-img">
+			<button class="reach-me-btn" id="reachMeBtn">Reach Me</button>
+		</div>
 	</section>
+	<div class="contact-popup-overlay" id="contactPopupOverlay">
+		<div class="contact-popup-card">
+			<button class="contact-popup-close" id="contactPopupClose">✕</button>
+			<h2>Contact Me</h2>
+			<div class="contact-popup-list">
+				<div>
+					<i class="fas fa-phone"></i>
+					<a href="tel:6360293982">6360293982</a>
+				</div>
+				<div>
+					<i class="fab fa-instagram"></i>
+					<a href="https://www.instagram.com/karan_saini.21?igsh=Y3EzZ3B0c2RtOHFv" target="_blank">Instagram</a>
+				</div>
+				<div>
+					<i class="fab fa-linkedin"></i>
+					<a href="https://www.instagram.com/karan_saini.21?igsh=Y3EzZ3B0c2RtOHFv" target="_blank">LinkedIn</a>
+				</div>
+			</div>
+		</div>
+	</div>
 	 <section class="hero">
 		<div class="hero-background"></div>
 		<div class="container hero-content">
@@ -197,5 +221,24 @@
 	<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 	<script src="carousel-init.js"></script>
 	<script src="script.js"></script>
+	<script>
+	// Contact popup logic=
+	const reachMeBtn = document.getElementById('reachMeBtn');
+	const contactPopupOverlay = document.getElementById('contactPopupOverlay');
+	const contactPopupClose = document.getElementById('contactPopupClose');
+	reachMeBtn.addEventListener('click', () => {
+		contactPopupOverlay.style.display = 'flex';
+		setTimeout(() => contactPopupOverlay.classList.add('show'), 10);
+	});
+	contactPopupClose.addEventListener('click', () => {
+		contactPopupOverlay.classList.remove('show');
+		setTimeout(() => contactPopupOverlay.style.display = 'none', 200);
+	});
+	contactPopupOverlay.addEventListener('click', (e) => {
+		if (e.target === contactPopupOverlay) {
+			contactPopupClose.click();
+		}
+	});
+	</script>
 </body>
 </html>

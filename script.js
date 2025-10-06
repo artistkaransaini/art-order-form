@@ -240,3 +240,28 @@ document
       console.log("Failed to send order. Please try again.");
     }
   });
+
+// Contact popup phone number: copy and open phone app
+document.addEventListener("DOMContentLoaded", function () {
+  const phoneLink = document.querySelector('.contact-popup-list a[href^="tel:"]');
+  if (phoneLink) {
+    phoneLink.addEventListener("click", function (e) {
+      e.preventDefault();
+      const phoneNumber = this.getAttribute("href").replace("tel:", "");
+      // Copy to clipboard
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(phoneNumber);
+      } else {
+        // fallback for older browsers
+        const tempInput = document.createElement("input");
+        tempInput.value = phoneNumber;
+        document.body.appendChild(tempInput);
+        tempInput.select();
+        document.execCommand("copy");
+        document.body.removeChild(tempInput);
+      }
+      // Open phone app (works on mobile, triggers default handler on desktop)
+      window.location.href = "tel:" + phoneNumber;
+    });
+  }
+});
