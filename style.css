@@ -62,7 +62,11 @@ a {
 }
 #logo {
     height: 400px;
-
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+    aspect-ratio: 1/1.1;
+    display: block;
 }
 
 /* -------------------------------------------------- */
@@ -744,6 +748,15 @@ input[type="checkbox"] {
     .pfp-img {
         width: 120px;
         height: 120px;
+    }
+    #logo {
+        height: 90px;
+        width: auto;
+        max-width: 90vw;
+        aspect-ratio: 1/1.1;
+        object-fit: contain;
+        margin: 0 auto 0.7rem auto;
+        display: block;
     }
     .pfp-inline-container {
         margin-top: 1rem;
