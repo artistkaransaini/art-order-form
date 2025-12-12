@@ -7,40 +7,13 @@
 	<link rel="stylesheet" href="style.css" />
 	  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-		integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOM8d7xj1z5l5e5e5e5e5e5e5e5e5e5e5e5e5"/>
+		integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOM8d7xj1z5l5e5e5e5e5e5e5e5e5e5e5e5e5" crossorigin="anonymous"/>
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" />
 	<link rel="icon" type="image/png" href="favicon.jpeg"/>
 </head>
 
 <body>
-	 <!-- Art Carousel Section -->
-	<section class="mega">
-		<img id="logo" src="logo.png" alt="Logo" class="logo">
-		<div class="pfp-inline-container">
-			<img src="pfp.jpeg" alt="Profile Picture" class="pfp-img">
-			<button class="reach-me-btn" id="reachMeBtn">Reach Me</button>
-		</div>
-	</section>
-	<div class="contact-popup-overlay" id="contactPopupOverlay">
-		<div class="contact-popup-card">
-			<button class="contact-popup-close" id="contactPopupClose">✕</button>
-			<h2>Contact Me</h2>
-			<div class="contact-popup-list">
-				<div>
-					<i class="fas fa-phone"></i>
-					<a href="tel:6360293982">6360293982</a>
-				</div>
-				<div>
-					<i class="fab fa-instagram"></i>
-					<a href="https://www.instagram.com/karan_saini.21?igsh=Y3EzZ3B0c2RtOHFv" target="_blank">Instagram</a>
-				</div>
-				<div>
-					<i class="fab fa-linkedin"></i>
-					<a href="https://www.instagram.com/karan_saini.21?igsh=Y3EzZ3B0c2RtOHFv" target="_blank">LinkedIn</a>
-				</div>
-			</div>
-		</div>
-	</div>
+	<!-- Hero section becomes the first visible element -->
 	 <section class="hero">
 		<div class="hero-background"></div>
 		<div class="container hero-content">
@@ -51,7 +24,9 @@
 			</p>
 		</div>
 	</section>
-	 <div class="section-header">
+
+	<!-- ...existing code: gallery header, carousel, order form, popup overlay and scripts ... -->
+	<div class="section-header">
 		 <h2>Gallery</h2>
 		 <p>Browse through my artworks below. Scroll down to order your favorite or request a custom piece!</p>
 	 </div>
@@ -66,7 +41,6 @@
 				<h2>Order Your Custom Painting</h2>
 				<p>Fill in your details and let's create something special together.</p>
 			</div>
- </div>
  </div>
 	<div class="container">
 		<form id="paintingOrderForm" action="#" method="POST" enctype="multipart/form-data">
@@ -206,6 +180,7 @@
 	  <div id="foot"><span> Made with <svg viewBox="0 0 1792 1792" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" style="height: 0.8rem;">
         <path d="M896 1664q-26 0-44-18l-624-602q-10-8-27.5-26T145 952.5 77 855 23.5 734 0 596q0-220 127-344t351-124q62 0 126.5 21.5t120 58T820 276t76 68q36-36 76-68t95.5-68.5 120-58T1314 128q224 0 351 124t127 344q0 221-229 450l-623 600q-18 18-44 18z" fill="#4a69bd      "></path>
       </svg> by Saini Stroke<span></div>
+
 	<div class="popup-overlay" id="popupOverlay">
         <div class="popup-content" id="popupContent">
             <button class="popup-close" id="popupClose">✕</button>
@@ -221,24 +196,5 @@
 	<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 	<script src="carousel-init.js"></script>
 	<script src="script.js"></script>
-	<script>
-	// Contact popup logic=
-	const reachMeBtn = document.getElementById('reachMeBtn');
-	const contactPopupOverlay = document.getElementById('contactPopupOverlay');
-	const contactPopupClose = document.getElementById('contactPopupClose');
-	reachMeBtn.addEventListener('click', () => {
-		contactPopupOverlay.style.display = 'flex';
-		setTimeout(() => contactPopupOverlay.classList.add('show'), 10);
-	});
-	contactPopupClose.addEventListener('click', () => {
-		contactPopupOverlay.classList.remove('show');
-		setTimeout(() => contactPopupOverlay.style.display = 'none', 200);
-	});
-	contactPopupOverlay.addEventListener('click', (e) => {
-		if (e.target === contactPopupOverlay) {
-			contactPopupClose.click();
-		}
-	});
-	</script>
 </body>
 </html>
